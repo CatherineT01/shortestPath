@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Downloads\heap.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Queue.h" />
   </ItemGroup>
