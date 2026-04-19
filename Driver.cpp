@@ -5,10 +5,14 @@
 #include <string>
 #include "graph.h"
 #include "Queue.h"
+#include "shortestpath.h"
 
 int main() {
     Graph g;
     Queue q;
+    shortestpath sp;
+    string source, target;
+ 
     vector<Edge> edges;
     string line;
     ifstream inFile("graph.txt");
@@ -36,6 +40,14 @@ int main() {
     g.printEdges();
     g.printVertices();
     q.printQueue();
-    
+
+
+    source = "Bachelors";
+    target = "SMP";
+
+    sp.run(g, source, target);
+    sp.printPath(source, target);
+
+
     return 0;
 }

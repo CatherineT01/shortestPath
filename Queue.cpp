@@ -155,7 +155,7 @@ void Queue::heapifyDown(int index)
 // Return Type: void                                           //
 // References: isFull(), heapifyUp(), and heap array           //
 // ----------------------------------------------------------- //
-void Queue::enqueue(int vertex, int priority){
+void Queue::enqueue(string vertex, int priority){
 	if (isFull()){
 		cout << "Queue is full!" << endl;
 		return;
@@ -182,7 +182,7 @@ void Queue::enqueue(int vertex, int priority){
 QueueNode Queue::dequeue() {
 
 	QueueNode removedNode;
-	removedNode.vertex = -1;
+	removedNode.vertex = "- 1";
 	removedNode.priority = -1;
 
 	if (isEmpty()) {
@@ -198,7 +198,7 @@ QueueNode Queue::dequeue() {
 		heapifyDown(0);
 	}
 
-	return removedNode;
+	return minNode;
 }
 
 // ----------------------------------------------------------- //

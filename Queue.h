@@ -9,7 +9,7 @@ const int MAX_QUEUE = 100;
 struct QueueNode
 {
 	// Struct Stuff //
-	int vertex;
+	string vertex;
 	int priority;
 };
 
@@ -32,7 +32,7 @@ public:
 	bool isFull() const;
 	int getSize() const;
 	// Queue Stuff //
-	void enqueue(int vertex, int priority);
+	void enqueue(string vertex, int priority);
 	QueueNode dequeue();
 	QueueNode peek() const;
 	// Print //

@@ -53,3 +53,13 @@ vector<Neighbor> Graph:: getNeighbors(string vertex){ // return list of neighbor
 	addVertex(vertex); // make sure vertex exists, create if missing
 	return adjList[vertex]; // return vector of neighbors
 }
+
+vector<string> Graph::getVertices(){
+		vector<string> vertices;
+
+		for (const pair<string, vector<Neighbor>>& p : adjList) {
+			vertices.push_back(p.first); // store the vertex name
+		}
+
+		return vertices;
+}

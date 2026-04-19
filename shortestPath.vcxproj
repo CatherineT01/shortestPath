@@ -123,14 +123,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Downloads\heap.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Queue.h" />
+    <ClInclude Include="shortestpath.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="shortestpath.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
