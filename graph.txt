@@ -1,4 +1,4 @@
-Poor,Bachleors degree,4
+Poor,Bachleors,4
 Bachelors,Masters,2
 Bachleors,Developer,4
 Masters,AIPM,4
