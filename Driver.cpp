@@ -11,11 +11,14 @@ int main() {
     Graph g;
     Queue q;
     shortestpath sp;
-    string source, target;
+    string filename, source, target;
  
     vector<Edge> edges;
     string line;
-    ifstream inFile("graph.txt");
+
+    cout << "Enter the input file name (xxx.txt): ";
+    cin >> filename;
+    ifstream inFile(filename.c_str());
 
     // check if file is open
     if (!inFile.is_open()) {
@@ -38,12 +41,12 @@ int main() {
     cout << "==============================================" << endl;
     g.PrintAdjacencyList();
     g.printEdges();
+
+    cout << endl << "What is your current career level? Choose from the list: ";
     g.printVertices();
-    q.printQueue();
-
-
-    source = "Bachelors";
-    target = "SMP";
+    cin>>source;
+    target = "Millionaire";
+    cout << endl << endl;
 
     sp.run(g, source, target);
     sp.printPath(source, target);

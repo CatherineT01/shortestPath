@@ -1,8 +1,8 @@
-Poor,Bachleors,4
+Poor,Bachelors,4
 Bachelors,Masters,2
-Bachleors,Developer,4
+Bachelors,Developer,4
 Masters,AIPM,4
 Developer,AIPM,5
-AIPM,SMP,2
-AIMP,Millionaire,3
-SMP,Millionaire,1
+AIPM,SPM,2
+AIPM,Millionaire,3
+SPM,Millionaire,1

@@ -36,7 +36,7 @@ void shortestpath::run(Graph& graph, string start, string target)
                 prev[v] = u;
 
                 pq.enqueue(v, dist[v]);
-            }
+            }            
         }
     }
 }
