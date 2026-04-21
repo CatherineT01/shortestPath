@@ -1,5 +1,13 @@
-// entry point. handles input/output, initializes the graph with verticies and edges. calls the 
-// algorithm and displays the result
+//-----------------------------------------------------------------------------------
+// CS 355 SHORTEST PATH TO BECOMING A MILLIONAIRE 
+// Authors: Adi, AJ, Catherine, Betsy
+// Date: 4/21/2026
+// File: Driver 
+// Description: This program uses Dijkstra's algorithm to find the shortest career path
+// to becoming a Millionaire. The user selects their current career level
+// and the program calculates the fastest route based on years of experience.
+//----------------------------------------------------------------------------------
+
 #include<fstream>
 #include <iomanip>
 #include <string>
@@ -7,50 +15,69 @@
 #include "Queue.h"
 #include "shortestpath.h"
 
+
 int main() {
     Graph g;
-    Queue q;
     shortestpath sp;
     string filename, source, target;
- 
-    vector<Edge> edges;
     string line;
 
-    cout << "Enter the input file name (xxx.txt): ";
+    cout << "==========================================" << endl;
+    cout << "    Career Path to Millionaire Finder     " << endl;
+    cout << "==========================================" << endl;
+
+    cout << "\nEnter the input file name (xxx.txt): ";
     cin >> filename;
     ifstream inFile(filename.c_str());
-
-    // check if file is open
-    if (!inFile.is_open()) {
-        cout << "Unable to open file" << endl;
-        return 1;
+    while (!inFile.is_open()) {
+        cout << "Error: Could not open '" << filename << "'. Try again: ";
+        cin >> filename;
+        inFile.open(filename);
     }
 
     while (getline(inFile, line)) {
-        size_t c1 = line.find(','); // find first comma
-        size_t c2 = line.find(',', c1 + 1); // find second comma
-        string start = line.substr(0, c1); // get start
-        string destination = line.substr(c1 + 1, c2 - c1 - 1); // get destination
-        int weight = stoi(line.substr(c2 + 1)); // get weight as an integer
+        size_t c1 = line.find(',');
+        size_t c2 = line.find(',', c1 + 1);
+        string start = line.substr(0, c1);
+        string destination = line.substr(c1 + 1, c2 - c1 - 1);
+        int weight = stoi(line.substr(c2 + 1));
+        g.addEdge(start, destination, weight);
+    }
+    inFile.close();
 
-        g.addEdge(start, destination, weight); // add edge to graph
-    } 
-    inFile.close(); // close file
-
- 
-    cout << "==============================================" << endl;
+    cout << "\n==============================================" << endl;
     g.PrintAdjacencyList();
     g.printEdges();
 
-    cout << endl << "What is your current career level? Choose from the list: ";
+
+    char again;
+
+    do {
+    cout << "\nWhat is your current career level? Choose from the list:" << endl;
     g.printVertices();
-    cin>>source;
+    cout << "\nEnter your choice: ";
+    cin >> source;
+
+
+    source[0] = toupper(source[0]);
+    for (int i = 1; i < source.length(); i++)
+        source[i] = tolower(source[i]);
+
+
     target = "Millionaire";
-    cout << endl << endl;
+
+    cout << "\n==============================================" << endl;
+    cout << "  Finding your path to " << target << "..." << endl;
+    cout << "==============================================" << endl << endl;
 
     sp.run(g, source, target);
     sp.printPath(source, target);
 
+    cout << "\nWould you like to try a different starting level? (y/n): ";
+    cin >> again;
+    } while (again == 'y' || again == 'Y');
+
+    cout << "\nGood luck on your journey to becomming a Millionaire! Goodbye!" << endl;
 
     return 0;
 }
