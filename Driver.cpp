@@ -30,7 +30,7 @@ int main() {
     cin >> filename;
     ifstream inFile(filename.c_str());
     while (!inFile.is_open()) {
-        cout << "Error: Could not open '" << filename << "'. Try again: ";
+        cout << "Error: Could not open '" << filename << "'. Try again (graph.txt, test1.txt, test2.txt):";
         cin >> filename;
         inFile.open(filename);
     }
@@ -58,11 +58,9 @@ int main() {
     cout << "\nEnter your choice: ";
     cin >> source;
 
-
     source[0] = toupper(source[0]);
     for (int i = 1; i < source.length(); i++)
         source[i] = tolower(source[i]);
-
 
     target = "Millionaire";
 
