@@ -1,0 +1,16 @@
+Poor,HighSchool,2
+HighSchool,CommunityCollege,3
+HighSchool,Bachelors,4
+CommunityCollege,Bachelors,2
+Bachelors,Intern,2
+Intern,JuniorDeveloper,2
+JuniorDeveloper,SeniorDeveloper,3
+SeniorDeveloper,Manager,4
+Manager,Director,3
+Director,Executive,4
+Executive,Millionaire,5
+Bachelors,GraduateSchool,4
+GraduateSchool,Consultant,3
+Consultant,Millionaire,4
+SeniorDeveloper,StartupFounder,5
+StartupFounder,Millionaire,3
