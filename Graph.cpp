@@ -2,12 +2,24 @@
 #include <vector>
 Graph::Graph(){}
 void Graph::addVertex(string name){
+	//fixing the case
+
 	if (adjList.find(name) == adjList.end()) { // check if vertex does not exist
 		adjList[name] = vector<Neighbor>(); // create an empty neighbor list
 	}
 }
 
 void Graph::addEdge(string start, string destination, int weight){
+	
+	//fixing the case for vertices
+	start[0] = toupper(start[0]);
+	for (int i = 1; i < start.length(); i++)
+		start[i] = tolower(start[i]);
+	
+	destination[0] = toupper(destination[0]);
+	for (int i = 1; i < destination.length(); i++)
+		destination[i] = tolower(destination[i]);
+
 	addVertex(start);
 	addVertex(destination);
 	for (const Neighbor& n : adjList[start]) {
