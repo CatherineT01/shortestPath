@@ -5,7 +5,7 @@ void shortestpath::run(Graph& graph, string start, string target)
     dist.clear();
     prev.clear();
 
-    // Initialize //my code wasnt working at first so the chat told me toa dd this
+    // Initialize distances to INT MAX or infinity and previous nodes to null for all vertices
     for (const string& v : graph.getVertices()) {
         dist[v] = INT_MAX; //basically infinity
         prev[v] = "";//empty or null
