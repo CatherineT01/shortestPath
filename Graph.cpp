@@ -100,7 +100,7 @@ void Graph::printEdges(){
 void Graph::PrintAdjacencyList(){
 	cout << "Adjacency List: " << endl;
 	for(const pair<string, vector<Neighbor>>& p : adjList){
-		cout << p.first": ";
+		cout << p.first << ": ";
 		for(const Neighbor& n : p.second){
 			cout << "(" << n.destination << ", " << n.weight << " years)";
 		}
