@@ -1,5 +1,13 @@
 #include "shortestpath.h"
-
+//------------------------------------------------------------
+// Method:      run
+// Author:      Adi
+// Description: Runs Dijkstra's algorithm from start to target, updating
+// Incoming:    graph- the weighted directed graph (Graph&)
+//              start- the source vertex name (string)
+//              tartget- the destination vertex name (string)
+// Outgoing:    dist and prev maps updated with shortest path data
+//------------------------------------------------------------
 void shortestpath::run(Graph& graph, string start, string target)
 {
     dist.clear();
@@ -41,6 +49,15 @@ void shortestpath::run(Graph& graph, string start, string target)
     }
 }
 
+//------------------------------------------------------------
+// Method:      printPath
+// Author:      Adi
+// Description: Reconstructs and prints the shortest path and total cost from start to target
+//              using the prev map
+// Incoming:    start- the source vertex name (string)
+//              tartget- the destination vertex name (string)               
+// Outgoing:    shortest path and total cost printed
+//------------------------------------------------------------
 void shortestpath::printPath(string start, string target)
 {
     // check if target is reachable
