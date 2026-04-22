@@ -68,7 +68,7 @@ void Graph::addEdge(string start, string destination, int weight){
 //------------------------------------------------------------
 void Graph::printVertices(){
 	cout << "Available Career Paths: " << endl;
-	for (const pair<string, vector<Neighbor>>& p : adjList) { // loop through adjacency list
+	for (const pair<string, vector<Neighbor>>& p : adjList) { // loop through and print adjacency list
 		cout << p.first << endl;
 	}
 }
@@ -98,17 +98,15 @@ void Graph::printEdges(){
 // Outgoing:    none
 //------------------------------------------------------------
 void Graph::PrintAdjacencyList(){
-
-	cout << "Adjacency matrix for current graph" << endl;
-	int n = adj_matrix.size();
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			cout << adj_matrix[i][j] << " ";
+	cout << "Adjacency List: " << endl;
+	for(const pair<string, vector<Neighbor>>& p : adjList){
+		cout << p.first": ";
+		for(const Neighbor& n : p.second){
+			cout << "(" << n.destination << ", " << n.weight << " years)";
 		}
 		cout << endl;
 	}
 }
-
 //------------------------------------------------------------
 // Method:      getNeighbors
 // Author:      Catherine
@@ -125,7 +123,7 @@ vector<Neighbor> Graph:: getNeighbors(string vertex){ // return list of neighbor
 
 //------------------------------------------------------------
 // Method:      getVertices
-// Author:      Catherine
+// Author:      Adi
 // Description: Returns a list of all vertex names currently in the graph
 // Incoming:    no data
 // Outgoing:    vector of strings containing all vertex names
