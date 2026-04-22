@@ -19,7 +19,6 @@ struct Edge { // struct for addEdge from a .txt file
 class Graph {
 
 	map<string, vector<Neighbor>> adjList;
-	vector<vector<int>> adj_matrix;
 
 public:
 	Graph();
